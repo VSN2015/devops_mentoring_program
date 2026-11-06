@@ -1,0 +1,12 @@
+
+services:
+  web_server:
+    image: nginx:1.27
+    container_name: nginx_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+      - ./nginx_logs:/var/log/nginx
+    restart: unless-stopped
+
